@@ -1,0 +1,245 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+div{
+    position: absolute;
+}
+@width: 800px;
+@height: 600px;
+.bg{
+    width: @width;
+    height: @height;
+    background: #f2f2ff;
+    overflow: hidden;
+}
+// 定义rotate()方法
+.rotate(@a: 5deg){
+    transform: rotate(@a);
+}
+.beam_public{
+    width: 1600px;
+    height: 20px;
+    background: #fff;
+    top: 290px;
+    left: -400px;
+}
+.beam:first-child{
+    .beam_public;
+    .rotate();
+}
+
+.beam:nth-child(2){
+    .beam_public;
+    .rotate(@a: 15deg);
+}
+.beam:nth-child(3){
+    .beam_public;
+    .rotate(@a: 25deg);
+}
+.beam:nth-child(4){
+    .beam_public;
+    .rotate(@a: 35deg);
+}
+.beam:nth-child(5){
+    .beam_public;
+    .rotate(@a: 45deg);
+}
+.beam:nth-child(6){
+    .beam_public;
+    .rotate(@a: 55deg);
+}
+.beam:nth-child(7){
+    .beam_public;
+    .rotate(@a: 65deg);
+}
+.beam:nth-child(8){
+    .beam_public;
+    .rotate(@a: 75deg);
+}
+.beam:nth-child(9){
+    .beam_public;
+    .rotate(@a: 85deg);
+}
+.beam:nth-child(10){
+    .beam_public;
+    .rotate(@a: 95deg);
+}
+.beam:nth-child(11){
+    .beam_public;
+    .rotate(@a: 105deg);
+}
+.beam:nth-child(12){
+    .beam_public;
+    .rotate(@a: 115deg);
+}
+.beam:nth-child(13){
+    .beam_public;
+    .rotate(@a: 125deg);
+}
+.beam:nth-child(14){
+    .beam_public;
+    .rotate(@a: 135eg);
+}
+.beam:nth-child(15){
+    .beam_public;
+    .rotate(@a: 145deg);
+}
+.beam:nth-child(16){
+    .beam_public;
+    .rotate(@a: 155deg);
+}
+.beam:nth-child(17){
+    .beam_public;
+    .rotate(@a: 165deg);
+}
+.beam:nth-child(18){
+    .beam_public;
+    .rotate(@a: 175deg);
+}
+.logo{
+    top: 120px;
+    left: 229px;
+}
+.d_shield1,
+.d_shield2,
+.d_shield3,
+.d_shield4,
+.d_shield5,
+.d_shield6{
+    background: #e15016;
+}
+.d_shield_public(@width: 140px,@height: 346px,@left: 32px){
+    width: @width;
+    height: @height;
+    left: @left;
+}
+// 水平方向倾斜(定义的)
+.transformSkewy(@skewy){
+    transform: skewY(@skewy);
+}
+.d_shield1{
+    .d_shield_public();
+}
+.d_shield2{
+    .transformSkewy(@skewy: 5deg); // 水平方向倾斜5deg
+    .d_shield_public(@width: 100px,@height: 350px,@left: 16px);
+}
+.d_shield3{
+    .d_shield_public(@width: 140px,@height: 100px,@left: 32px);
+    .transformSkewy(@skewy: 15deg); 
+    top: 265px; // 多了这个
+}
+.d_shield4{
+    .d_shield_public(@width: 140px,@height: 346px,@left: 172px);
+}
+.d_shield5{
+    .transformSkewy(@skewy: -5deg); // 水平方向倾斜-5deg
+    .d_shield_public(@width: 100px,@height: 350px,@left: 227px);
+}
+.d_shield6{
+    .transformSkewy(@skewy: -15deg); // 水平方向倾斜-15deg
+    .d_shield_public(@width: 140px,@height: 100px,@left: 172px);
+    top: 265px;  // 多了这个
+}
+// 封装在transform:scale()规则
+.transformScale(@scaleValue) {
+    transform: scale(@scaleValue);
+}
+.l_shield_public(@left: 172px,@width: 140px,@height: 346px){
+    width: @width;
+    height: @height;
+    left: @left;
+}
+.paleOrange{
+    .transformScale(@scaleValue: 0.82);
+    left: 31px;
+    top: 25px;
+}
+/*  浅橘色部分样式 */
+.l_shiell1,
+.l_shiell2,
+.l_shiell3,
+.l_shiell4{
+  background: #ee6812;
+}
+.l_shiell1{
+    .l_shield_public(@width: 140px,@height: 346px,@left: 172px);
+}
+.l_shield2{
+    .l_shield_public(@left: 227px,@width: 100px,@height: 363px);
+    .transformSkewy(@skewy: -5deg);
+}
+.l_shield3{
+    .l_shield_public(@left: 172px,@width: 138px,@height: 100px);
+    .transformSkewy(@skewy: -15deg);
+    top: 282px;
+}
+//  组成logn里面的数字5左半边的灰色部分 
+.gray1,.gray2,.gray3,.gray4{
+    background: #ebebeb;
+}
+.gray_public(@width: 43px,@height: 102px,@left: 70px,@top: 70px){
+    height: @height;
+    width: @width;
+    left: @left;
+    top: @top;
+}
+.gray1{
+    .gray_public(@width: 98px,@height: 43px,@left: 75px,@top: 70px);
+}
+.gray2{
+    .gray_public(@width: 46px,@height: 216px,@left: 75px,@top: 70px);
+    transform: skewX(5deg);
+}
+.gray3{
+    .gray_public(@width: 95px,@height: 43px,@left: 77px,@top: 156px);
+}
+.gray4{
+    .gray_public(@width: 87px,@height: 47px,@left: 85px,@top: 251px);
+    .transformSkewy(@skewy: 18deg);
+}
+.white1,
+.white2,
+.white3,
+.white4{
+    background: #fff;
+}
+.white_public(@width: 102px,@height: 43px,@left: 172px,@top: 70px){
+    height: @height;
+    width: @width;
+    left: @left;
+    top: @top;
+}
+.white1{
+    .white_public();
+}
+.white2{
+    .white_public(@width: 46px,@height: 216px,@left: 223px,@top: 70px);
+    transform: skewX(-5deg);
+}
+.white3{
+    .white_public(@width: 95px,@height: 43px,@left: 172px,@top: 156px);
+}
+.white4{
+    .white_public(@width: 87px,@height: 47px,@left: 172px,@top: 251px);
+    .transformSkewy(@skewy: -18deg);
+}
+.d_shield7{
+    .white_public(@height: 20px,@top: 199px,@width: 80px,@left: 60px);
+    background: #e15016;
+}
+.l_shield4{
+    .white_public(@height: 43px,@top: 113px,@width: 100px,@left: 180px);
+    background: #ee6812;
+}
+img{
+    position: fixed;
+    .white_public(@height: 110px,@top: 8px,@width: 350px,@left: 225px);
+}
+
+
+   
+
+
+
